@@ -67,8 +67,8 @@ then
 fi
 
     FILESHA1=$(openssl sha1 $THEFILE | egrep '\w+$' -o)
-    FILEDATE=$(date +%Y%m%d)
-    FILESAVENAME=${FILESHA1:0:15}_${FILEDATE}_$THEFILE
+    FILEDATE=$(date +%y%m%d%H%M%S)
+    FILESAVENAME=${FILESHA1:0:10}_${FILEDATE}_$THEFILE
     cp $THEFILE ./backup/$FILESAVENAME
 
 #进行签名
